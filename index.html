@@ -214,7 +214,7 @@
                     <a href=""><i class="fab fa-instagram"></i></a>
                     <a href="https://www.linkedin.com/in/shashank16m"><i class="fab fa-linkedin"></i></a>
                 </div>
-                <a href="" download class="btn btn2">Download CV</a>
+                <a href="images/my-cv (2).pdf" download class="btn btn2">Download CV</a>
             </div>
             <div class="contact-right">
                 <form name="submit-to-google-sheet">
@@ -262,7 +262,24 @@
     function closemenu(){
         sidemeu.style.right = "-200px";
     }
-
 </script>
+<script>
+    const scriptURL = 'https://script.google.com/macros/s/AKfycbzJUNQYB3x-hCfp7vFBXASxq2vUrM6J11rKJjwJoWIETHFXXgS1rg3MneY3vlZzfCJw/exec' // add your own app script link here
+    const form = document.forms['submit-to-google-sheet']
+    const msg = document.getElementById("msg")
+  
+    form.addEventListener('submit', e => {
+      e.preventDefault()
+      fetch(scriptURL, { method: 'POST', body: new FormData(form)})
+        .then(response => {
+            msg.innerHTML = "Message sent successfully"
+            setTimeout(function(){
+                msg.innerHTML = ""
+            },5000)
+            form.reset()
+        })
+        .catch(error => console.error('Error!', error.message))
+    })
+  </script>
 </body>
 </html>
