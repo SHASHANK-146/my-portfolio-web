@@ -31,7 +31,7 @@ nav{
 }
 
 .logo{
-    width: 140px;
+    width: 180px;
 }
 
 nav ul li{
@@ -137,6 +137,33 @@ nav ul li a:hover::after{
 }
 .tab-contents.active-tab{
     display: block;
+}
+
+.experience-details {
+    display: none;
+    padding: 10px;
+    background-color: white;
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    
+}
+
+.experience-details.active {
+    display: block;
+}
+
+.experience-tab {
+    cursor: pointer;
+    color: #007BFF;
+    text-decoration: none;
+}
+
+.experience-tab:hover {
+    text-decoration: none;
+}
+.experience-details.hidden{
+    color: #000;      
+    font-weight: bold; 
 }
 
 /* ----------------services------------- */
